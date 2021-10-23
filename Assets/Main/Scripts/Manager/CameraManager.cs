@@ -40,4 +40,17 @@ public class CameraManager : MonoBehaviour
             camera.transform.Translate(new Vector2(-translate_x, -translate_y));
         }
     }
+
+    public void ZoomCamera(float zoom_size, float zoom_speed)
+    {
+        StartCoroutine(_ZoomCamera(zoom_size, zoom_speed));
+    }
+    IEnumerator _ZoomCamera(float zoom_size, float zoom_speed)
+    {
+        while (Mathf.Abs(camera.orthographicSize - zoom_size) > 0.01f)
+        {
+            camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, zoom_size, Time.deltaTime * zoom_speed);
+            yield return new WaitForSeconds(0.01f);
+        }
+    }
 }

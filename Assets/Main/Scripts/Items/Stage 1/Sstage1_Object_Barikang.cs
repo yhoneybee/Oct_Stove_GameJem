@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stage1_Object_Doll : InteractiveObject
+public class Sstage1_Object_Barikang : InteractiveObject
 {
-    [SerializeField] GameObject[] hairs = new GameObject[2];
     protected override void Start()
     {
         base.Start();
@@ -13,12 +12,11 @@ public class Stage1_Object_Doll : InteractiveObject
     }
     protected override void Action()
     {
-        if(condition)
+        if (condition)
         {
-            StageManager.Instance.player_information.HairCount++;
+            StageManager.Instance.player_information.object_id_arr[ID] = true;
 
-            hairs[0].SetActive(false);
-            hairs[1].SetActive(false);
+            gameObject.SetActive(false);
 
             condition = false;
         }

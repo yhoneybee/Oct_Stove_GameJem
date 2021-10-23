@@ -19,6 +19,7 @@ public class Stage3_Object_BiggestNewspaper : InteractiveObject
             condition = false;
             StartCoroutine(UIManager.Instance.EMovingUI(MoveTarget, Vector2.zero, 3, true));
             StartCoroutine(UIManager.Instance.ERotatingUI(MoveTarget, Vector3.forward * 180, 3));
+            StageManager.Instance.player_information.HairCount++;
         }
     }
 }

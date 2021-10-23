@@ -17,6 +17,7 @@ public class Stage3_Object_Wax : InteractiveObject
         {
             condition = false;
             StageManager.Instance.player_information.object_id_arr[ID] = true;
+            StageManager.Instance.player_information.HairCount++;
         }
     }
 }

@@ -12,6 +12,7 @@ public class Stage3_Object_Wig : InteractiveObject
     protected override void Action()
     {
         StageManager.Instance.player_information.object_id_arr[ID] = true;
+        StageManager.Instance.player_information.HairCount++;
         Destroy(gameObject);
     }
 }

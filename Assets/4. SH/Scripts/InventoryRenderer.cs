@@ -5,29 +5,20 @@ using UnityEngine.UI;
 
 public class InventoryRenderer : MonoBehaviour
 {
-    public static InventoryRenderer Instance { get; private set; }
+    public List<Image> slot_lt = new List<Image>();
+    public List<Image> img_lt  = new List<Image>();
 
-    private void Awake()
+    Item item = new Item();
+
+    // Start is called before the first frame update
+    void Start()
     {
-        Instance = this;
-        DontDestroyOnLoad(this);
+        img_lt[item.itemIndex].sprite = item.itemImage;
     }
 
-    public List<Image> slot_lt = new List<Image>();
-    public void Check(int index)
+    // Update is called once per frame
+    void Update()
     {
-        if(StageManager.Instance.player_information.object_id_arr[index])
-        {
-            // 같은 코드
-            //foreach (var o in InventoryManager.Instance.AllItem)
-            //{
-            //    if(o.itemIndex == index)
-            //    {
-            //        slot_lt[index].sprite = o.itemImage;
-            //    }
-            //}
-            slot_lt[index].color  = new Color(1, 1, 1, 1);
-            slot_lt[index].sprite = InventoryManager.Instance.AllItem.Find((o) => { return o.itemIndex == index; }).itemImage;
-        }
+        
     }
 }

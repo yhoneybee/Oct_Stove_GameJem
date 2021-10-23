@@ -26,7 +26,7 @@ public class Stage3_Object_Light : InteractiveObject
 
         List<Color> colors = new List<Color>()
         {
-            Color.red,Color.red,Color.green,Color.red,Color.yellow,Color.green,Color.green
+            Color.red,Color.green,Color.red,Color.red,Color.yellow,Color.green,Color.green
         };
 
         for (int i = 0; i < colors.Count; i++)

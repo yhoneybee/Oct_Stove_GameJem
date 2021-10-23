@@ -109,7 +109,10 @@ public class Stage3Linker : MonoBehaviour
         // 큰 뉴스
         Buttons.BiggerNews.onClick.AddListener(() =>
         {
-            ZoomedObjs.Biggest.gameObject.SetActive(true);
+            if (true) // YHTODO : 여기에서 사진을 가지고 있는지 확인
+            {
+                ZoomedObjs.Biggest.gameObject.SetActive(true);
+            }
         });
 
         //좌우 화살표

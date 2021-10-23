@@ -13,6 +13,9 @@ public struct Buttons
     public Button PlayPuzzle;
     public Button GetCuttingPicture;
     public Button LightDrawer;
+    public Button News;
+    public Button BiggerNews;
+    public Button BiggestNews;
 }
 [System.Serializable]
 public struct ZoomedObjs
@@ -27,6 +30,10 @@ public struct ZoomedObjs
 
     [Header("- LightDrawer UI -")]
     public RectTransform LightDrawer;
+
+    [Header("- Newspaper UI -")]
+    public RectTransform Bigger;
+    public RectTransform Biggest;
 }
 
 public class Stage3Linker : MonoBehaviour
@@ -38,8 +45,6 @@ public class Stage3Linker : MonoBehaviour
     public Button Right;
 
     public GameObject PuzzleGame;
-    public GameObject TextPrefab;
-    public RectTransform Content;
 
     public ZoomedObjs ZoomedObjs;
     public Buttons Buttons;
@@ -62,6 +67,7 @@ public class Stage3Linker : MonoBehaviour
             {
                 ActiveObj.SetActive(false);
                 ZoomParent(false);
+                ZoomedObjs.Biggest.gameObject.SetActive(false);
             }
         });
 
@@ -90,6 +96,19 @@ public class Stage3Linker : MonoBehaviour
         {
             ZoomParent(true);
             ShowZoomedObj(ZoomedObjs.LightDrawer.gameObject);
+        });
+
+        // 뉴스
+        Buttons.News.onClick.AddListener(() =>
+        {
+            ZoomParent(true);
+            ShowZoomedObj(ZoomedObjs.Bigger.gameObject);
+        });
+
+        // 큰 뉴스
+        Buttons.BiggerNews.onClick.AddListener(() =>
+        {
+            ZoomedObjs.Biggest.gameObject.SetActive(true);
         });
 
         //좌우 화살표

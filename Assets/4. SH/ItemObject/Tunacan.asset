@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Tunacan
   m_EditorClassIdentifier: 
   itemName: "\uCC38\uCE58\uCE94"
-  itemIndex: 2
+  itemIndex: 0
   itemImage: {fileID: 21300000, guid: b454820912d43e24bbc29e1aed636edb, type: 3}

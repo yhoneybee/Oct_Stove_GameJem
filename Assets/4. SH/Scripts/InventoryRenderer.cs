@@ -6,19 +6,23 @@ using UnityEngine.UI;
 public class InventoryRenderer : MonoBehaviour
 {
     public List<Image> slot_lt = new List<Image>();
-    public List<Image> img_lt  = new List<Image>();
 
-    Item item = new Item();
-
-    // Start is called before the first frame update
     void Start()
     {
-        img_lt[item.itemIndex].sprite = item.itemImage;
+        //StageManager.Instance.player_information.object_id_arr[1] = 1;
     }
-
-    // Update is called once per frame
-    void Update()
+    void Check(int index)
     {
-        
+        if(InventoryManager.Instance.item_lt[index])
+        {
+            //foreach (var o in InventoryManager.Instance.AllItem)
+            //{
+            //    if(o.itemIndex == index)
+            //    {
+            //        slot_lt[index].sprite = o.itemImage;
+            //    }
+            //}
+            slot_lt[index].sprite = InventoryManager.Instance.AllItem.Find((o) => { return o.itemIndex == index; }).itemImage;
+        }
     }
 }

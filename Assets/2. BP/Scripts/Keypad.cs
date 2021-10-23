@@ -21,10 +21,12 @@ public class Keypad : MonoBehaviour
     }
     void quit()
     {
+        //틀렸을때 이벤트
         Debug.Log("quit");
     }
     void correct()
     {
+        //맞았을때 이벤트
         Debug.Log("correct");
     }
     IEnumerator check()

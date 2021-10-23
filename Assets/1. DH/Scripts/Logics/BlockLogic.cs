@@ -17,10 +17,8 @@ public class BlockLogic : MonoBehaviour
     {
         select_colors = new Color[right_colors.Length];
     }
-
     void Update()
     {
-
     }
     bool CheckRight()
     {

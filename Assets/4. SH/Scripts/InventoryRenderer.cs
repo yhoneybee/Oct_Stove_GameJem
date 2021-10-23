@@ -16,7 +16,7 @@ public class InventoryRenderer : MonoBehaviour
     public List<Image> slot_lt = new List<Image>();
     public void Check(int index)
     {
-        if(InventoryManager.Instance.item_lt[index])
+        if(StageManager.Instance.player_information.object_id_arr[index])
         {
             // 같은 코드
             //foreach (var o in InventoryManager.Instance.AllItem)

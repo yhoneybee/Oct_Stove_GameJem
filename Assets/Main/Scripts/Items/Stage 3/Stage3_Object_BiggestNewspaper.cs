@@ -27,18 +27,16 @@ public class Stage3_Object_BiggestNewspaper : InteractiveObject
 
     IEnumerator EChangeSprite()
     {
-        StartCoroutine(UIManager.Instance.ERotatingUI(MoveTarget, Vector3.forward * 180, 3));
-        yield return StartCoroutine(UIManager.Instance.EMovingUI(MoveTarget, Vector2.zero, 3, true));
-
-        Stage3Linker.Instance.ZoomedObjs.Bigger.gameObject.SetActive(false);
+        StartCoroutine(UIManager.Instance.ERotatingUI(MoveTarget, Vector3.forward * 0, 3));
+        yield return StartCoroutine(UIManager.Instance.EMovingUI(MoveTarget, new Vector2(110, -17), 3, true));
 
         var img = Stage3Linker.Instance.ZoomedObjs.Biggest.GetComponent<Image>();
 
+        StartCoroutine(UIManager.Instance.EColoringUI(MoveTarget, Color.clear, 3));
         yield return StartCoroutine(UIManager.Instance.EColoringUI(img, Color.black, 3));
-        gameObject.SetActive(false);
         img.sprite = Stage3Linker.Instance.ZoomedObjs.ChangeSprite;
         yield return StartCoroutine(UIManager.Instance.EColoringUI(img, Color.white, 3));
-
-        Destroy(gameObject, 5);
+        Destroy(Stage3Linker.Instance.ZoomedObjs.Bigger.gameObject, 3);
+        Stage3Linker.Instance.Buttons.ZoomParent.targetGraphic.raycastTarget = false;
     }
 }

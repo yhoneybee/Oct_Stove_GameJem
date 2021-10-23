@@ -34,6 +34,7 @@ public struct ZoomedObjs
     [Header("- Newspaper UI -")]
     public RectTransform Bigger;
     public RectTransform Biggest;
+    public Sprite ChangeSprite;
 }
 
 public class Stage3Linker : MonoBehaviour

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Stage2_Object_microwave : InteractiveObject
 {
-
     protected override void Start()
     {
         base.Start();

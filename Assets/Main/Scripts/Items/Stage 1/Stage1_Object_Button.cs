@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class Stage1_Object_Button : InteractiveObject
 {
-    protected override void Action(bool condition)
+    [SerializeField] Stage1_Object_Can object_can;
+    protected override void Action()
     {
+        StageManager.Instance.player_information.object_id_arr[ID] = 1;
+        gameObject.SetActive(false);
+
+        StageManager.Instance.player_information.object_id_arr[object_can.ID] = 1;
+        object_can.gameObject.SetActive(false);
     }
 }

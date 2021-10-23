@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class Stage1_Object_Can : InteractiveObject
 {
-    protected override void Action(bool condition)
+    public Stage1_Object_Button object_button;
+
+    protected override void Action()
     {
+        StageManager.Instance.player_information.object_id_arr[ID] = 1;
+        gameObject.SetActive(false);
+
+        StageManager.Instance.player_information.object_id_arr[object_button.ID] = 1;
+        object_button.gameObject.SetActive(false);
     }
 }

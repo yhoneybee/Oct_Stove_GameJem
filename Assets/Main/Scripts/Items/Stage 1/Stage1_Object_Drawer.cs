@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stage1_Object_Doll : InteractiveObject
+public class Stage1_Object_Drawer : InteractiveObject
 {
+    [SerializeField] GameObject Drawer;
     protected override void Start()
     {
         base.Start();
@@ -12,11 +13,6 @@ public class Stage1_Object_Doll : InteractiveObject
     }
     protected override void Action()
     {
-        if(condition)
-        {
-            StageManager.Instance.player_information.HairCount++;
-
-            condition = false;
-        }
+        Drawer.SetActive(true);
     }
 }

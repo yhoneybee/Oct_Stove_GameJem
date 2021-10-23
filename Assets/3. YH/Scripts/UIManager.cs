@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
 
     /// <summary>
     /// Graphic클래스를 상속받는 모든 UI를 움직일수있는 코루틴입니다
-    /// 버튼은 Graphic을 상속받지 않더군요...
+    /// 버튼은 btn.targetGraphic으로 부르세요~
     /// </summary>
     /// <typeparam name="T">Graphic을 상속받는 형식</typeparam>
     /// <param name="ui">움직일 UI</param>
@@ -42,6 +42,7 @@ public class UIManager : MonoBehaviour
 
     /// <summary>
     /// Lerp로 Color를 수정하는 코루틴입니다
+    /// 버튼은 btn.targetGraphic으로 부르세요~
     /// </summary>
     /// <typeparam name="T">Graphic을 상속받는 형식</typeparam>
     /// <param name="ui">색을 바꿀 UI</param>
@@ -53,10 +54,10 @@ public class UIManager : MonoBehaviour
     {
         var wait = new WaitForSeconds(0.0001f);
 
-        while (ui.color.r >= change_color.r &&
-            ui.color.g >= change_color.g &&
-            ui.color.b >= change_color.b &&
-            ui.color.a >= change_color.a)
+        while (Mathf.Abs(ui.color.r - change_color.r) + 
+            Mathf.Abs(ui.color.g - change_color.g) + 
+            Mathf.Abs(ui.color.b - change_color.b) +
+            Mathf.Abs(ui.color.a - change_color.a) > 0.005f)
         {
             ui.color = Color.Lerp(ui.color, change_color, Time.deltaTime * change_speed);
             yield return wait;
@@ -68,6 +69,7 @@ public class UIManager : MonoBehaviour
 
     /// <summary>
     /// UI의 크기를 바꾸는 코루틴입니다
+    /// 버튼은 btn.targetGraphic으로 부르세요~
     /// </summary>
     /// <typeparam name="T">Graphic을 상속받는 형식</typeparam>
     /// <param name="ui">크기를 바꿀 UI</param>

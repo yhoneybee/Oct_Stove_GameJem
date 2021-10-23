@@ -5,16 +5,20 @@ using UnityEngine.UI;
 
 public class InventoryRenderer : MonoBehaviour
 {
-    public List<Image> slot_lt = new List<Image>();
+    public static InventoryRenderer Instance { get; private set; }
 
-    void Start()
+    private void Awake()
     {
-        //StageManager.Instance.player_information.object_id_arr[1] = 1;
+        Instance = this;
+        DontDestroyOnLoad(this);
     }
-    void Check(int index)
+
+    public List<Image> slot_lt = new List<Image>();
+    public void Check(int index)
     {
         if(InventoryManager.Instance.item_lt[index])
         {
+            // 같은 코드
             //foreach (var o in InventoryManager.Instance.AllItem)
             //{
             //    if(o.itemIndex == index)
@@ -22,6 +26,7 @@ public class InventoryRenderer : MonoBehaviour
             //        slot_lt[index].sprite = o.itemImage;
             //    }
             //}
+            slot_lt[index].color  = new Color(1, 1, 1, 1);
             slot_lt[index].sprite = InventoryManager.Instance.AllItem.Find((o) => { return o.itemIndex == index; }).itemImage;
         }
     }

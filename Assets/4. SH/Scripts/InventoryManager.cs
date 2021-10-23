@@ -11,15 +11,15 @@ public class InventoryManager : MonoBehaviour
         Instance = this;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public List<bool> item_lt = new List<bool>()
     {
-        
-    }
+    //  1.     2.     3.     4.     5.     6.     7.     8.     9.     10.
+        false, false, false, false, false, false, false, false, false, false,
+    };
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

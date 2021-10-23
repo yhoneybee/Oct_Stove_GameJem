@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Button
   m_EditorClassIdentifier: 
   itemName: "\uB2E8\uCD94"
-  itemIndex: 1
+  itemIndex: 0
   itemImage: {fileID: 649223268058989734, guid: fe175b0f8df47874ea938cc38f1f00d6, type: 3}

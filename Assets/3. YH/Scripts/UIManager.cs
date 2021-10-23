@@ -54,8 +54,8 @@ public class UIManager : MonoBehaviour
     {
         var wait = new WaitForSeconds(0.0001f);
 
-        while (Mathf.Abs(ui.color.r - change_color.r) + 
-            Mathf.Abs(ui.color.g - change_color.g) + 
+        while (Mathf.Abs(ui.color.r - change_color.r) +
+            Mathf.Abs(ui.color.g - change_color.g) +
             Mathf.Abs(ui.color.b - change_color.b) +
             Mathf.Abs(ui.color.a - change_color.a) > 0.005f)
         {
@@ -90,6 +90,32 @@ public class UIManager : MonoBehaviour
             yield return wait;
         }
         uiRTf.localScale = change_scale;
+
+        yield return null;
+    }
+
+    /// <summary>
+    /// UI를 회전시켜주는 코루틴입니다
+    /// </summary>
+    /// <typeparam name="T">Graphic을 상속받는 형식</typeparam>
+    /// <param name="ui">회전 시킬 UI</param>
+    /// <param name="change_rotate">바뀔 회전 x,y,z 값</param>
+    /// <param name="change_speed">바뀌는 속도</param>
+    /// <returns></returns>
+    public IEnumerator ERotatingUI<T>(T ui, Vector3 change_rotate, float change_speed)
+        where T : Graphic
+    {
+        var wait = new WaitForSeconds(0.0001f);
+        var uiRTf = ui.GetComponent<RectTransform>();
+
+        Quaternion change_quaternion = Quaternion.Euler(change_rotate);
+
+        while (Quaternion.Angle(uiRTf.localRotation, change_quaternion) > 0.1f)
+        {
+            uiRTf.localRotation = Quaternion.Lerp(uiRTf.localRotation, change_quaternion, Time.deltaTime * change_speed);
+            yield return wait;
+        }
+        uiRTf.localRotation = change_quaternion;
 
         yield return null;
     }

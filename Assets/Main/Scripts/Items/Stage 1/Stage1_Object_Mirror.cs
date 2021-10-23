@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Stage1_Object_Mirror : InteractiveObject
 {
-    protected override void Action(bool condition)
+    [SerializeField] GameObject mirror;
+    protected override void Action()
     {
+        mirror.SetActive(true);
     }
 }

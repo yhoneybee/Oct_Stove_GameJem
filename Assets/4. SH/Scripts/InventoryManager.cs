@@ -9,6 +9,7 @@ public class InventoryManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(this);
     }
 
     public List<bool> item_lt = new List<bool>()

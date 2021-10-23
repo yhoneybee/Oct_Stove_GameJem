@@ -6,14 +6,13 @@ public class PlayerInformation : MonoBehaviour
 {
     [SerializeField] PlayerSaveData player_save_data;
 
-    private int hairCount;
     public int HairCount
     {
-        get => hairCount;
+        get => player_save_data.hair_count;
         set
         {
             // SetPlayerHair(); 함수 만들어서 실행시키기
-            hairCount = value;
+            player_save_data.hair_count = value;
         }
     }
 

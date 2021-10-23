@@ -293,8 +293,7 @@ MonoBehaviour:
   Before: {fileID: 1347815440}
   After: {fileID: 0}
   Button: {fileID: 114102617}
-  BeforeSprite: {fileID: 21300000, guid: bcaaa01f006137a469ac4ba0fd703cd8, type: 3}
-  AfterSprite: {fileID: 21300000, guid: f9cf30bf7219207449cac56b24cdb355, type: 3}
+  player_data: {fileID: 11400000, guid: b11bc552f04921946933d03fd2e102b2, type: 2}
 --- !u!1 &255962563
 GameObject:
   m_ObjectHideFlags: 0

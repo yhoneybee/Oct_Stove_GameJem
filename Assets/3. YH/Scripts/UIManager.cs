@@ -14,14 +14,14 @@ public class UIManager : MonoBehaviour
     }
 
     /// <summary>
-    /// GraphicÅ¬·¡½º¸¦ »ó¼Ó¹Þ´Â ¸ðµç UI¸¦ ¿òÁ÷ÀÏ¼öÀÖ´Â ÄÚ·çÆ¾ÀÔ´Ï´Ù
-    /// ¹öÆ°Àº btn.targetGraphicÀ¸·Î ºÎ¸£¼¼¿ä~
+    /// GraphicÅ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ó¹Þ´ï¿½ ï¿½ï¿½ï¿½ UIï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½Ö´ï¿½ ï¿½Ú·ï¿½Æ¾ï¿½Ô´Ï´ï¿½
+    /// ï¿½ï¿½Æ°ï¿½ï¿½ btn.targetGraphicï¿½ï¿½ï¿½ï¿½ ï¿½Î¸ï¿½ï¿½ï¿½ï¿½ï¿½~
     /// </summary>
-    /// <typeparam name="T">GraphicÀ» »ó¼Ó¹Þ´Â Çü½Ä</typeparam>
-    /// <param name="ui">¿òÁ÷ÀÏ UI</param>
-    /// <param name="change_pos">µµÂø ÁöÁ¡</param>
-    /// <param name="isLerp">Lerp·Î Ã³¸®ÇÒ°ÍÀÎ°¡? false¶ó¸é MoveTowards·Î Ã³¸®ÇÔ</param>
-    /// <param name="move_speed">¿òÁ÷ÀÌ´Â ¼Óµµ</param>
+    /// <typeparam name="T">Graphicï¿½ï¿½ ï¿½ï¿½Ó¹Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½</typeparam>
+    /// <param name="ui">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ UI</param>
+    /// <param name="change_pos">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</param>
+    /// <param name="isLerp">Lerpï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ò°ï¿½ï¿½Î°ï¿½? falseï¿½ï¿½ï¿½ MoveTowardsï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½</param>
+    /// <param name="move_speed">ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½Óµï¿½</param>
     /// <returns></returns>
     public IEnumerator EMovingUI<T>(T ui, Vector2 change_pos, float move_speed, bool isLerp = false)
         where T : Graphic
@@ -41,13 +41,13 @@ public class UIManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Lerp·Î Color¸¦ ¼öÁ¤ÇÏ´Â ÄÚ·çÆ¾ÀÔ´Ï´Ù
-    /// ¹öÆ°Àº btn.targetGraphicÀ¸·Î ºÎ¸£¼¼¿ä~
+    /// Lerpï¿½ï¿½ Colorï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ú·ï¿½Æ¾ï¿½Ô´Ï´ï¿½
+    /// ï¿½ï¿½Æ°ï¿½ï¿½ btn.targetGraphicï¿½ï¿½ï¿½ï¿½ ï¿½Î¸ï¿½ï¿½ï¿½ï¿½ï¿½~
     /// </summary>
-    /// <typeparam name="T">GraphicÀ» »ó¼Ó¹Þ´Â Çü½Ä</typeparam>
-    /// <param name="ui">»öÀ» ¹Ù²Ü UI</param>
-    /// <param name="change_color">¹Ù²Ü »ö</param>
-    /// <param name="change_speed">¹Ù²Ù´Â ¼Óµµ</param>
+    /// <typeparam name="T">Graphicï¿½ï¿½ ï¿½ï¿½Ó¹Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½</typeparam>
+    /// <param name="ui">ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ UI</param>
+    /// <param name="change_color">ï¿½Ù²ï¿½ ï¿½ï¿½</param>
+    /// <param name="change_speed">ï¿½Ù²Ù´ï¿½ ï¿½Óµï¿½</param>
     /// <returns></returns>
     public IEnumerator EColoringUI<T>(T ui, Color change_color, float change_speed)
         where T : Graphic
@@ -68,13 +68,13 @@ public class UIManager : MonoBehaviour
     }
 
     /// <summary>
-    /// UIÀÇ Å©±â¸¦ ¹Ù²Ù´Â ÄÚ·çÆ¾ÀÔ´Ï´Ù
-    /// ¹öÆ°Àº btn.targetGraphicÀ¸·Î ºÎ¸£¼¼¿ä~
+    /// UIï¿½ï¿½ Å©ï¿½â¸¦ ï¿½Ù²Ù´ï¿½ ï¿½Ú·ï¿½Æ¾ï¿½Ô´Ï´ï¿½
+    /// ï¿½ï¿½Æ°ï¿½ï¿½ btn.targetGraphicï¿½ï¿½ï¿½ï¿½ ï¿½Î¸ï¿½ï¿½ï¿½ï¿½ï¿½~
     /// </summary>
-    /// <typeparam name="T">GraphicÀ» »ó¼Ó¹Þ´Â Çü½Ä</typeparam>
-    /// <param name="ui">Å©±â¸¦ ¹Ù²Ü UI</param>
-    /// <param name="change_scale">¹Ù²Ü Å©±â</param>
-    /// <param name="change_speed">¹Ù²Ù´Â ¼Óµµ</param>
+    /// <typeparam name="T">Graphicï¿½ï¿½ ï¿½ï¿½Ó¹Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½</typeparam>
+    /// <param name="ui">Å©ï¿½â¸¦ ï¿½Ù²ï¿½ UI</param>
+    /// <param name="change_scale">ï¿½Ù²ï¿½ Å©ï¿½ï¿½</param>
+    /// <param name="change_speed">ï¿½Ù²Ù´ï¿½ ï¿½Óµï¿½</param>
     /// <param name="isLerp"></param>
     /// <returns></returns>
     public IEnumerator EScalingUI<T>(T ui, Vector2 change_scale, float change_speed, bool isLerp = false)

@@ -19,14 +19,14 @@ public class PlayerInformation : MonoBehaviour
     [SerializeField] int hair_count;
 
     // 오브젝트 ID를 인덱스로 사용하는 배열 (해당 ID에 오브젝트를 갖고 있다면 1, 없다면 0)
-    public int[] object_id_arr { get; set; }
+    public bool[] object_id_arr { get; set; }
 
     // 인스펙터에서 파악하기 위한 배열
-    [SerializeField] int[] show_array;
+    [SerializeField] bool[] show_array;
 
     void Start()
     {
-        object_id_arr = new int[StageManager.Instance.take_object_count];
+        object_id_arr = new bool[StageManager.Instance.take_object_count];
     }
 
     void Update()

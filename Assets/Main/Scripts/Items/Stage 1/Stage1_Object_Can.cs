@@ -11,10 +11,10 @@ public class Stage1_Object_Can : InteractiveObject
     [SerializeField] GameObject button_icon;
     protected override void Action()
     {
-        StageManager.Instance.player_information.object_id_arr[ID] = 1;
+        StageManager.Instance.player_information.object_id_arr[ID] = true;
         gameObject.SetActive(false);
 
-        StageManager.Instance.player_information.object_id_arr[object_button.ID] = 1;
+        StageManager.Instance.player_information.object_id_arr[object_button.ID] = true;
         object_button.gameObject.SetActive(false);
 
         can_icon.SetActive(false);

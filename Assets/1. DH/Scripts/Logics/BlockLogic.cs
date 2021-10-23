@@ -78,6 +78,15 @@ public class BlockLogic : MonoBehaviour
             }
 
             Debug.Log(logic_clear);
+            if (Stage3Linker.Instance)
+            {
+                if (logic_clear)
+                {
+                    Stage3Linker.Instance.ZoomedObjs.PuzzleSuccessImg.sprite = Stage3Linker.Instance.ZoomedObjs.PuzzleSuccess;
+                    Stage3Linker.Instance.Buttons.GetCuttingPicture.gameObject.SetActive(true);
+                }
+                Stage3Linker.Instance.PuzzleGame.SetActive(false);
+            }
             return;
         }
     }

@@ -53,4 +53,26 @@ public class CameraManager : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
     }
+
+    public void ZoomCamera(Vector2 pos, float zoom_size, float zoom_speed, float move_speed)
+    {
+        StartCoroutine(EZoomCamera(pos, zoom_size, zoom_speed, move_speed));
+    }
+
+    IEnumerator EZoomCamera(Vector2 pos, float zoom_size, float zoom_speed, float move_speed)
+    {
+        var wait = new WaitForSeconds(0.001f);
+
+        while (Mathf.Abs(camera.orthographicSize - zoom_size) > 0.01f ||
+            Vector2.Distance(camera.transform.position, pos) > 0.01f)
+        {
+            camera.orthographicSize = Mathf.Lerp(camera.orthographicSize, zoom_size, Time.deltaTime * zoom_speed);
+            camera.transform.position = Vector2.Lerp(camera.transform.position, pos, Time.deltaTime * move_speed);
+            yield return wait;
+        }
+        camera.orthographicSize = zoom_size;
+        camera.transform.position = pos;
+
+        yield return null;
+    }
 }

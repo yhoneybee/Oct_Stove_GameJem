@@ -20,7 +20,7 @@ public class IngameUI : MonoBehaviour
     Coroutine rotation_coroutine = null;
     Coroutine onoff_coroutine = null;
 
-    int current_count = 0;
+    public int current_count = 0;
     bool is_side_ui_appeard = true;
     void Start()
     {

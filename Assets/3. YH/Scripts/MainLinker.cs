@@ -16,6 +16,8 @@ public class MainLinker : MonoBehaviour
     Coroutine CColoringUI_1;
     Coroutine CColoringUI_2;
 
+    [SerializeField] PlayerSaveData player_data;
+
     bool ui_move_up;
     bool appear_btn;
 
@@ -45,5 +47,10 @@ public class MainLinker : MonoBehaviour
                 Button.enabled = false;
             }
         });
+
+        player_data.hair_count = 0;
+
+        for (int i = 0; i < player_data.object_id_arr.Length; i++)
+            player_data.object_id_arr[i] = false;
     }
 }

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Player Save Data
   m_EditorClassIdentifier: 
   object_id_arr: 000000000000
+  hair_count: 0

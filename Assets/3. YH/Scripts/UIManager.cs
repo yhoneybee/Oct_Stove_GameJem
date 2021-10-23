@@ -94,6 +94,14 @@ public class UIManager : MonoBehaviour
         yield return null;
     }
 
+    /// <summary>
+    /// UI를 회전시켜주는 코루틴입니다
+    /// </summary>
+    /// <typeparam name="T">Graphic을 상속받는 형식</typeparam>
+    /// <param name="ui">회전 시킬 UI</param>
+    /// <param name="change_rotate">바뀔 회전 x,y,z 값</param>
+    /// <param name="change_speed">바뀌는 속도</param>
+    /// <returns></returns>
     public IEnumerator ERotatingUI<T>(T ui, Vector3 change_rotate, float change_speed)
         where T : Graphic
     {

@@ -6,15 +6,18 @@ using UnityEngine.UI;
 public class Ramen : MonoBehaviour
 {
     [SerializeField] List<Image> sprites;
-    bool[] color = { false, false,false,true};
+    bool[] color = { false, false, false, true };
+    bool correct = false;
+    public Image ramenvinel;
+    Transform ramenpos;
     private void Start()
     {
-
+        ramenpos = ramenvinel.gameObject.GetComponent<Transform>();
     }
 
     private void Update()
     {
-        for(int i = 0; i < 4; i++)
+        for (int i = 0; i < 4; i++)
         {
             if (color[i] == false)
             {
@@ -26,15 +29,20 @@ public class Ramen : MonoBehaviour
     }
     public void ClickEvent(int number)
     {
-        if (color[number] == true)
+        if (correct == false)
         {
-            color[number] = false;
-        }
-        else
-            color[number] = true;
-        if (color[0] == false && color[1] == true && color[2] == false && color[3] == false)
-        {
-            Debug.Log("정답이네요!");
+
+            if (color[number] == true)
+            {
+                color[number] = false;
+            }
+            else
+                color[number] = true;
+            if (color[0] == false && color[1] == true && color[2] == false && color[3] == false)
+            {
+                correct = true;
+                StartCoroutine(UIManager.Instance.EMovingUI(ramenvinel, new Vector2(700, -300), 3, true));
+            }
         }
     }
 }

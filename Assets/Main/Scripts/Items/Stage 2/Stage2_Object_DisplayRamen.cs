@@ -7,6 +7,7 @@ public class Stage2_Object_DisplayRamen : InteractiveObject
 {
     [SerializeField] Image btn;
     public bool puzzling;
+    bool delay;
     protected override void Start()
     {
         base.Start();
@@ -14,8 +15,13 @@ public class Stage2_Object_DisplayRamen : InteractiveObject
     }
     protected override void Action()
     {
-        CameraManager.Instance.ZoomCamera(new Vector2(7.5f, 2.6f), 1, 4, 4);
-        puzzling = true;
+        if (delay == false)
+        {
+            puzzling = true;
+            delay = true;
+            CameraManager.Instance.ZoomCamera(new Vector2(7.5f, 2.6f), 1, 4, 4);
+            StartCoroutine(delaya());
+        }
     }
     private void Update()
     {
@@ -26,11 +32,22 @@ public class Stage2_Object_DisplayRamen : InteractiveObject
         else
         {
             btn.raycastTarget = true;
+
         }
     }
     public void quit()
     {
-        puzzling = false;
+        if (puzzling == true&& delay == false)
+        {
+            puzzling = false;
+            delay = true;
+            CameraManager.Instance.ZoomCamera(new Vector2(0, 0), 5, 4, 4);
+            StartCoroutine(delaya());
+        }
     }
-
+    IEnumerator delaya()
+    {
+        yield return new WaitForSeconds(2);
+        delay = false;
+    }
 }

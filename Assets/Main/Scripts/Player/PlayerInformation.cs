@@ -21,10 +21,10 @@ public class PlayerInformation : MonoBehaviour
     void Start()
     {
         object_id_arr = new int[StageManager.Instance.take_object_count];
+        object_id_arr[5] = 1;
     }
 
     void Update()
     {
-
     }
 }

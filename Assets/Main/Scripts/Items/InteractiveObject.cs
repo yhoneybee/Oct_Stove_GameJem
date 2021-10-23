@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InteractiveObject : MonoBehaviour
+public abstract class InteractiveObject : MonoBehaviour
 {
     public enum ObjectKind
     {
@@ -15,14 +15,17 @@ public class InteractiveObject : MonoBehaviour
     public Image image;
     public Sprite image_sprite;
 
+    Button button;
+
     public int ID;
-
-    public delegate void Act(bool condition);
-    public Act Action;
-
-    //player.id_array[ID] > 0로 인자 넘겨주기
-    public void ObjectAction(bool able = true)
+    public bool condition;
+    void Start()
     {
-            Action(able && Action != null);
+        image = GetComponent<Image>();
+        button = GetComponent < Button>();
+
+        button.onClick.AddListener(()=> { Action(condition); });
     }
+
+    protected abstract void Action(bool condition);
 }

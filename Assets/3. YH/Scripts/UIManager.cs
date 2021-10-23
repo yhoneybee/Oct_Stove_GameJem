@@ -54,8 +54,8 @@ public class UIManager : MonoBehaviour
     {
         var wait = new WaitForSeconds(0.0001f);
 
-        while (Mathf.Abs(ui.color.r - change_color.r) + 
-            Mathf.Abs(ui.color.g - change_color.g) + 
+        while (Mathf.Abs(ui.color.r - change_color.r) +
+            Mathf.Abs(ui.color.g - change_color.g) +
             Mathf.Abs(ui.color.b - change_color.b) +
             Mathf.Abs(ui.color.a - change_color.a) > 0.005f)
         {
@@ -90,6 +90,24 @@ public class UIManager : MonoBehaviour
             yield return wait;
         }
         uiRTf.localScale = change_scale;
+
+        yield return null;
+    }
+
+    public IEnumerator ERotatingUI<T>(T ui, Vector3 change_rotate, float change_speed)
+        where T : Graphic
+    {
+        var wait = new WaitForSeconds(0.0001f);
+        var uiRTf = ui.GetComponent<RectTransform>();
+
+        Quaternion change_quaternion = Quaternion.Euler(change_rotate);
+
+        while (Quaternion.Angle(uiRTf.localRotation, change_quaternion) > 0.1f)
+        {
+            uiRTf.localRotation = Quaternion.Lerp(uiRTf.localRotation, change_quaternion, Time.deltaTime * change_speed);
+            yield return wait;
+        }
+        uiRTf.localRotation = change_quaternion;
 
         yield return null;
     }

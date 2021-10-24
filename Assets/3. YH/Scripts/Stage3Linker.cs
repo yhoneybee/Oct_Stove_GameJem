@@ -45,6 +45,7 @@ public class Stage3Linker : MonoBehaviour
     public Image Bg;
     public Button Left;
     public Button Right;
+    public Button Down;
 
     public GameObject PuzzleGame;
     public TextMeshProUGUI LogText;
@@ -63,6 +64,11 @@ public class Stage3Linker : MonoBehaviour
 
     private void Start()
     {
+        Down.onClick.AddListener(() => 
+        {
+            SceneManager.Instance.ChangeScene("Road");
+        });
+
         // ´Ý±â ¿ë
         Buttons.ZoomParent.onClick.AddListener(() =>
         {

@@ -31,6 +31,8 @@ public class PlayerInformation : MonoBehaviour
         }
     }
 
+    public int ending_case = 2;
+
     // 인스펙터에서 파악하기 위한 배열
     [SerializeField] bool[] show_array;
 

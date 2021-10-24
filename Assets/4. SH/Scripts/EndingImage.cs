@@ -11,18 +11,6 @@ public class EndingImage : MonoBehaviour
 
     public Image Fade;
 
-    private static int list_index = 2;
-    public static int ListIndex
-    {
-        get { return list_index; }
-        set
-        {
-            if (list_index < 0)
-                list_index = value;
-        }
-    }
-
-
     public List<GameObject> GetImgList(int index)
     {
         return index switch
@@ -37,7 +25,7 @@ public class EndingImage : MonoBehaviour
     void Start()
     {
         ResetImage();
-        ImageRender(GetImgList(ListIndex));
+        ImageRender(GetImgList(StageManager.Instance.player_information.ending_case));
     }
 
     void ResetImage()

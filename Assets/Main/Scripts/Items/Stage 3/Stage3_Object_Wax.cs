@@ -110,6 +110,7 @@ public class Stage3_Object_Wax : InteractiveObject
                 condition = false;
                 StageManager.Instance.player_information.object_id_arr[ID] = true;
                 StageManager.Instance.player_information.HairCount++;
+                StartCoroutine(Stage3Linker.Instance.ELogging("´Ù¸®ÅÐÀ» ¿Î½ÌÇØ ¸Ó¸®ÅÐÀ» ¾ò¾ú´Ù!"));
                 break;
         }
 

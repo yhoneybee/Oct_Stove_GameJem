@@ -7,6 +7,7 @@ public class Stage2_Object_microwave : InteractiveObject
 {
     [SerializeField] Image Microwave;
     [SerializeField] Image microwaveopen;
+    [SerializeField] Image Hari;
     [SerializeField] Keypad keypad;
     public bool setactive=false;
     protected override void Start()
@@ -19,6 +20,7 @@ public class Stage2_Object_microwave : InteractiveObject
         if (keypad.already == true)
         {
             microwaveopen.gameObject.SetActive(true);
+            Hari.gameObject.SetActive(false);
         }
         else
         setactive = true;

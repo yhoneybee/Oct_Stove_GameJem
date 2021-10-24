@@ -6,5 +6,5 @@ using UnityEngine;
 public class PlayerSaveData : ScriptableObject
 {
     public bool[] object_id_arr;
-    public int hair_count;
+    public int hair_count=0;
 }

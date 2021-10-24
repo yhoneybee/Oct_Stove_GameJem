@@ -18,7 +18,7 @@ public class Stage3_Object_Wig : InteractiveObject
 
     IEnumerator ELog()
     {
-        yield return StartCoroutine(Stage3Linker.Instance.ELogging("°¡¹ß¿¡ ÀÖ´Â ¸Ó¸®Ä«¶ôÀ» ¶â¾î ¸Ó¸®ÅĞÀ» ¾ò¾ú´Ù!"));
+        yield return StartCoroutine(Stage3Linker.Instance.ELogging("ì£¼ì¸ê³µì˜ ì…ì—ì„œ ì¹¨ì´ í˜ëŸ¬ë‚˜ì˜¤ê¸° ì‹œì‘í•©ë‹ˆë‹¤."));
         Destroy(gameObject);
     }
 }

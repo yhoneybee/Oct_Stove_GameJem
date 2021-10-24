@@ -69,7 +69,7 @@ public class Stage3Linker : MonoBehaviour
             SceneManager.Instance.ChangeScene("Road");
         });
 
-        // ´Ý±â ¿ë
+        // ï¿½Ý±ï¿½ ï¿½ï¿½
         Buttons.ZoomParent.onClick.AddListener(() =>
         {
             if (ActiveObj)
@@ -81,50 +81,50 @@ public class Stage3Linker : MonoBehaviour
             }
         });
 
-        // ±×³É ¼­¶ø
+        // ï¿½×³ï¿½ ï¿½ï¿½ï¿½ï¿½
         Buttons.CombDrawer.onClick.AddListener(() =>
         {
             ZoomParent(true);
             ShowZoomedObj(ZoomedObjs.CombDrawer.gameObject);
         });
 
-        // ÆÛÁñ¼­¶÷
+        // ï¿½ï¿½ï¿½ñ¼­¶ï¿½
         Buttons.PuzzleDrawer.onClick.AddListener(() =>
         {
             ZoomParent(true);
             ShowZoomedObj(ZoomedObjs.PuzzleDrawer.gameObject);
         });
 
-        // ÆÛÁñ ½ÃÀÛ
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         Buttons.PlayPuzzle.onClick.AddListener(() =>
         {
             PuzzleGame.SetActive(true);
         });
 
-        // ¶óÀÌÆ® ¼­¶ø
+        // ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
         Buttons.LightDrawer.onClick.AddListener(() =>
         {
             ZoomParent(true);
             ShowZoomedObj(ZoomedObjs.LightDrawer.gameObject);
         });
 
-        // ´º½º
+        // ï¿½ï¿½ï¿½ï¿½
         Buttons.News.onClick.AddListener(() =>
         {
             ZoomParent(true);
             ShowZoomedObj(ZoomedObjs.Bigger.gameObject);
         });
 
-        // Å« ´º½º
+        // Å« ï¿½ï¿½ï¿½ï¿½
         Buttons.BiggerNews.onClick.AddListener(() =>
         {
-            if (StageManager.Instance.player_information.object_id_arr[5]) // YHTODO : ¿©±â¿¡¼­ »çÁøÀ» °¡Áö°í ÀÖ´ÂÁö È®ÀÎ
+            if (StageManager.Instance.player_information.object_id_arr[5]) // YHTODO : ï¿½ï¿½ï¿½â¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ È®ï¿½ï¿½
             {
                 ZoomedObjs.Biggest.gameObject.SetActive(true);
             }
         });
 
-        //ÁÂ¿ì È­»ìÇ¥
+        //ï¿½Â¿ï¿½ È­ï¿½ï¿½Ç¥
         Left.onClick.AddListener(() =>
         {
             if (CMovingUI != null) StopCoroutine(CMovingUI);

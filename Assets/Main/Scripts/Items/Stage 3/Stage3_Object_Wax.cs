@@ -82,35 +82,35 @@ public class Stage3_Object_Wax : InteractiveObject
         switch (count)
         {
             case 5:
-                Question.text = $"�Ұ��� ���� �Ӹ��� �ٵ�����~";
-                LeftText.text = $"�ʳ� �ٵ�������";
-                RightText.text = $"���ڴ� �Ӹ�������";
+                Question.text = $"소개팅 전에 머리는 다듬어야지~";
+                LeftText.text = $"너나 다듬으세요";
+                RightText.text = $"남자는 머리빨이지";
 
 
                 break;
             case 4:
-                Question.text = $"�� �������� �Ӹ��� ǳ��������~ ����� ����?";
-                LeftText.text = $"�߸���";
-                RightText.text = $"�̿�� ���� �ؾ�";
+                Question.text = $"오 저번보다 머리가 풍성해졌네~ 비결이 뭐야?";
+                LeftText.text = $"발모제";
+                RightText.text = $"미용사 님의 솜씨";
 
 
                 break;
             case 3:
-                Question.text = $"���~ �ٸ����� �� �̷��� ����? �ν��ϴ°� �?";
-                LeftText.text = $"��";
-                RightText.text = $"�ƴϿ�";
+                Question.text = $"어머~ 다리털은 왜 이렇게 많아? 왁싱하는거 어때?";
+                LeftText.text = $"네";
+                RightText.text = $"아니오";
 
 
                 break;
             case 2:
-                Question.text = $"��� �ٵ���ٱ�?";
-                LeftText.text = $"������";
-                RightText.text = $"������";
+                Question.text = $"어떻게 다듬어줄까?";
+                LeftText.text = $"샤기컷";
+                RightText.text = $"일출컷";
 
                 condition = false;
                 StageManager.Instance.player_information.object_id_arr[ID] = true;
                 StageManager.Instance.player_information.HairCount++;
-                StartCoroutine(Stage3Linker.Instance.ELogging("�ٸ����� �ν��� �Ӹ����� �����!"));
+                StartCoroutine(Stage3Linker.Instance.ELogging("다리털을 머리에 심습니다."));
                 break;
         }
 

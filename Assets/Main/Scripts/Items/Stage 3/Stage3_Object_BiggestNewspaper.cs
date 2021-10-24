@@ -37,6 +37,6 @@ public class Stage3_Object_BiggestNewspaper : InteractiveObject
         yield return StartCoroutine(UIManager.Instance.EColoringUI(img, Color.white, 3));
         Destroy(Stage3Linker.Instance.ZoomedObjs.Bigger.gameObject, 3);
         Stage3Linker.Instance.Buttons.ZoomParent.targetGraphic.raycastTarget = false;
-        yield return StartCoroutine(Stage3Linker.Instance.ELogging("´ë¸Ó¸® ¾ÆÀú¾¾ÀÇ °¡È£°¡ ³»·ÁÁ³½À´Ï´Ù, ¸Ó¸®ÅĞÀÌ ¼Ú¾Æ³³´Ï´Ù!"));
+        yield return StartCoroutine(Stage3Linker.Instance.ELogging("ëŒ€ë¨¸ë¦¬ ì•„ì €ì”¨ì˜ ìˆ˜í˜¸ì²œì‚¬! ëŒ€ë¨¸ë¦¬ ì•„ì €ì”¨ì˜ ê°€í˜¸ê°€ ë‚´ë ¤ì§‘ë‹ˆë‹¤. ë¨¸ë¦¬ì¹´ë½ì´ ì†Ÿì•„ë‚©ë‹ˆë‹¤."));
     }
 }

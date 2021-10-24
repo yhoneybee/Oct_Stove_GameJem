@@ -7,6 +7,7 @@ using TMPro;
 public class StoreManager : MonoBehaviour
 {
     public Button Button;
+    public Button door;
     public List<Sprite> sprites = new List<Sprite>();
     public Image Img;
 
@@ -14,6 +15,13 @@ public class StoreManager : MonoBehaviour
 
     private void Start()
     {
+        door.onClick.AddListener(() =>
+        {
+            if (StageManager.Instance.player_information.HairCount >= 6)
+            {
+                SceneManager.Instance.ChangeScene("Road");
+            }
+        });
         Button.onClick.AddListener(() =>
         {
             if (isButtonGotten)

@@ -6,6 +6,8 @@ using TMPro;
 
 public class IngameUI : MonoBehaviour
 {
+    public PlayerSaveData data;
+
     [SerializeField] TextMeshProUGUI hair_count_text;
     [SerializeField] TextMeshProUGUI timer_text;
 
@@ -20,7 +22,6 @@ public class IngameUI : MonoBehaviour
     Coroutine rotation_coroutine = null;
     Coroutine onoff_coroutine = null;
 
-    public int current_count = 0;
     bool is_side_ui_appeard = true;
     void Start()
     {
@@ -28,7 +29,7 @@ public class IngameUI : MonoBehaviour
         {
             if (rotation_coroutine != null)
                 StopCoroutine(rotation_coroutine);
-            
+
             rotation_coroutine = StartCoroutine(RotationButton());
 
             if (onoff_coroutine != null)
@@ -39,7 +40,6 @@ public class IngameUI : MonoBehaviour
 
         side_ui_button_transform = side_ui_button.GetComponent<RectTransform>();
 
-        current_count = StageManager.Instance.timer;
         InvokeRepeating("CountDown", 0, 1);
     }
 
@@ -50,9 +50,9 @@ public class IngameUI : MonoBehaviour
     }
     void CountDown()
     {
-        current_count--;
+        StageManager.Instance.player_information.player_save_data.timer--;
 
-        timer_text.text = $"{current_count / 60} : {current_count % 60}";
+        timer_text.text = $"{StageManager.Instance.player_information.player_save_data.timer / 60} : {StageManager.Instance.player_information.player_save_data.timer % 60}";
     }
 
     IEnumerator RotationButton()

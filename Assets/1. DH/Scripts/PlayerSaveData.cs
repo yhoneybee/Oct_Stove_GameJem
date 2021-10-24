@@ -7,4 +7,5 @@ public class PlayerSaveData : ScriptableObject
 {
     public bool[] object_id_arr;
     public int hair_count=0;
+    public int timer;
 }

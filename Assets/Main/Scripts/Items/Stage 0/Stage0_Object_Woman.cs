@@ -22,7 +22,7 @@ public class Stage0_Object_Woman : InteractiveObject
 
             StartCoroutine(UIManager.Instance.EMovingUI(barikang, new Vector2(-844, -350 + 100), 5, true));
 
-            GameObject.Find("Ingame UI").GetComponent<IngameUI>().current_count -= 30;
+            StageManager.Instance.player_information.player_save_data.timer -= 30;
 
             CameraManager.Instance.ShakeCamera(5, 3f);
             StartCoroutine(FadeImage(fade_rect_transform.GetComponent<UnityEngine.UI.Image>(), new Color(1, 0, 0, 0.5f), new Color(0, 0, 0, 0)));

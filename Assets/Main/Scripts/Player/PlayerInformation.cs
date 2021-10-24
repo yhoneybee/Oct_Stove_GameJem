@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInformation : MonoBehaviour
 {
-    [SerializeField] PlayerSaveData player_save_data;
+    public PlayerSaveData player_save_data;
 
     public int HairCount
     {

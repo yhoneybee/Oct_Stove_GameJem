@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/1. DH/Scenes/Road.unity
     guid: 03cdc4b8c7b716743864dab07832af11
+  - enabled: 1
+    path: Assets/2. BP/Scenes/Keypad.unity
+    guid: ab8b67d68fb262a478b1c87628076f1c
   m_configObjects: {}

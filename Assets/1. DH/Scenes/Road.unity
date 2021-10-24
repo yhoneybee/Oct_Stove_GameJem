@@ -1323,8 +1323,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -844, y: -393}
-  m_SizeDelta: {x: 147.2546, y: 261.35}
+  m_AnchoredPosition: {x: -844, y: -293.17}
+  m_SizeDelta: {x: 142, y: 417}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &920485159
 MonoBehaviour:
@@ -1346,7 +1346,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 37b2619df4a55434ab570997dad150c6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1376,7 +1376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9568e6a1d7613ae43af8ffe3e5dad46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
   ID: 0
   fade_rect_transform: {fileID: 48452387}
   barikang: {fileID: 486991062}
@@ -1619,7 +1618,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Store
+          m_StringArgument: Keypad
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1136925785
@@ -2586,7 +2585,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e195a441459d1942950356137c02eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
   ID: 0
   help_window: {fileID: 1817210588}
 --- !u!1 &1513556497
@@ -2700,8 +2698,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 819, y: -371}
-  m_SizeDelta: {x: 147.2546, y: 261.35}
+  m_AnchoredPosition: {x: 439.5, y: -312}
+  m_SizeDelta: {x: 128, y: 332}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1524910249
 MonoBehaviour:
@@ -2723,7 +2721,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 63269ae1d8f95d34b8ab24534a57fdda, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2753,7 +2751,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3be1837296adb4c9f0237c42702dfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
   ID: 0
   barikang: {fileID: 673716625}
 --- !u!114 &1524910252
@@ -3183,7 +3180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf517ca5d0e0e84591f9859c8516b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
   ID: 0
 --- !u!114 &1710916364
 MonoBehaviour:
@@ -3400,7 +3396,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf22e4434e7e48449bef8638aa3b26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
   ID: 0
 --- !u!1 &1887051779
 GameObject:

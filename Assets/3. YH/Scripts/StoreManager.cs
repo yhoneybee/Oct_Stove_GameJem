@@ -17,7 +17,7 @@ public class StoreManager : MonoBehaviour
     {
         door.onClick.AddListener(() =>
         {
-            if (StageManager.Instance.player_information.HairCount >= 6)
+            if (StageManager.Instance.player_information.HairCount >= 6 && door != null)
             {
                 SceneManager.Instance.ChangeScene("Road");
             }

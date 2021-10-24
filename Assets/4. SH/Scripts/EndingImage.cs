@@ -8,7 +8,17 @@ public class EndingImage : MonoBehaviour
     public List<GameObject> bald_img;
     public List<GameObject> normal_img;
 
-    public static int ListIndex = 0;
+    private static int list_index = 2;
+    public static int ListIndex
+    {
+        get { return list_index; }
+        set
+        {
+            if (list_index < 0)
+                list_index = value;
+        }
+    }
+
 
     public List<GameObject> GetImgList(int index)
     {
@@ -29,7 +39,7 @@ public class EndingImage : MonoBehaviour
 
     void ResetImage()
     {
-        for(int i = 0; i < happy_img.Count; i++)
+        for (int i = 0; i < happy_img.Count; i++)
             happy_img[i].SetActive(false);
         for (int i = 0; i < bald_img.Count; i++)
             bald_img[i].SetActive(false);
@@ -46,7 +56,7 @@ public class EndingImage : MonoBehaviour
     {
         var waitTime = new WaitForSeconds(2f);
 
-        for(int i = 0; i < list.Count; i++)
+        for (int i = 0; i < list.Count; i++)
         {
             list[i].SetActive(true);
             yield return waitTime;

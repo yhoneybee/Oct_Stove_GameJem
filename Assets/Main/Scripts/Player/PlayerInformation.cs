@@ -26,6 +26,8 @@ public class PlayerInformation : MonoBehaviour
         set
         {
             player_save_data.object_id_arr = value;
+            for (int i = 0; i < player_save_data.object_id_arr.Length; i++)
+                InventoryRenderer.Instance.Check(i);
         }
     }
 

@@ -38,6 +38,7 @@ public class Stage3_Object_Wax : InteractiveObject
                     break;
                 case 2:
                     // NONE
+                    EndingImage.ListIndex = 0;
                     break;
             }
 
@@ -57,6 +58,7 @@ public class Stage3_Object_Wax : InteractiveObject
                     StageManager.Instance.player_information.player_save_data.timer -= 30;
                     break;
                 case 2:
+                    EndingImage.ListIndex = 1;
                     break;
             }
 

@@ -21,7 +21,6 @@ public class Stage3_Object_BiggestNewspaper : InteractiveObject
             StartCoroutine(EChangeSprite());
 
             StageManager.Instance.player_information.HairCount++;
-
         }
     }
 
@@ -38,5 +37,6 @@ public class Stage3_Object_BiggestNewspaper : InteractiveObject
         yield return StartCoroutine(UIManager.Instance.EColoringUI(img, Color.white, 3));
         Destroy(Stage3Linker.Instance.ZoomedObjs.Bigger.gameObject, 3);
         Stage3Linker.Instance.Buttons.ZoomParent.targetGraphic.raycastTarget = false;
+        yield return StartCoroutine(Stage3Linker.Instance.ELogging("대머리 아저씨의 가호가 내려졌습니다, 머리털이 솟아납니다!"));
     }
 }

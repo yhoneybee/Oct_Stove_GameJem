@@ -29,7 +29,7 @@ public class Stage0_Object_Salon : InteractiveObject
 
     void SceneChange()
     {
-        SceneManager.Instance.ChangeScene("Salon");
+        SceneManager.Instance.ChangeScene("Stage3");
     }
     private void WindowDestroy()
     {

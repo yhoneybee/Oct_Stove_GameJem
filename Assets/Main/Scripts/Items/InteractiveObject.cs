@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public abstract class InteractiveObject : MonoBehaviour
 {
-    public Image image;
-
     Button button;
 
     public int ID;
@@ -14,7 +12,6 @@ public abstract class InteractiveObject : MonoBehaviour
     protected bool condition;
     protected virtual void Start()
     {
-        image = GetComponent<Image>();
         button = GetComponent < Button>();
 
         button.onClick.AddListener(() => { Action(); });

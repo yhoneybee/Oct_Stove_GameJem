@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndingImage : MonoBehaviour
 {
     public List<GameObject> happy_img;
     public List<GameObject> bald_img;
     public List<GameObject> normal_img;
+
+    public Image Fade;
 
     private static int list_index = 2;
     public static int ListIndex
@@ -62,8 +65,9 @@ public class EndingImage : MonoBehaviour
             yield return waitTime;
         }
 
-        yield return new WaitForSeconds(7f);
+        yield return StartCoroutine(UIManager.Instance.EColoringUI(Fade, Color.black, 3));
         Debug.Log("SceneChange");
+        SceneManager.Instance.ChangeScene("Main");
         ResetImage();
     }
 }

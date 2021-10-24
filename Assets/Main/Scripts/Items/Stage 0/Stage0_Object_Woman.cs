@@ -33,7 +33,6 @@ public class Stage0_Object_Woman : InteractiveObject
     void DestroyBarikang()
     {
         barikang.gameObject.SetActive(false);
-        StageManager.Instance.player_information.HairCount++;
     }
 
     IEnumerator FadeImage(UnityEngine.UI.Image image, params Color[] colors)

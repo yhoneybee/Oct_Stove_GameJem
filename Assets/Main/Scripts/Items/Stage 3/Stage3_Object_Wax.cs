@@ -28,16 +28,17 @@ public class Stage3_Object_Wax : InteractiveObject
             {
                 case 5:
                     // WRONG
-                    StageManager.Instance.player_information.player_save_data.timer -= 30;
+                    StageManager.Instance.timer -= 30;
                     break;
                 case 4:
                     // WRONG
-                    StageManager.Instance.player_information.player_save_data.timer -= 30;
+                    StageManager.Instance.timer -= 30;
                     break;
                 case 3:
                     break;
                 case 2:
-                    // NONE
+
+                    EndingImage.ListIndex = 0;
                     break;
             }
 
@@ -54,9 +55,11 @@ public class Stage3_Object_Wax : InteractiveObject
                     break;
                 case 3:
                     //WRONG
-                    StageManager.Instance.player_information.player_save_data.timer -= 30;
+                    StageManager.Instance.timer -= 30;
                     break;
                 case 2:
+                    EndingImage.ListIndex = 1;
+                    
                     break;
             }
 
@@ -82,35 +85,35 @@ public class Stage3_Object_Wax : InteractiveObject
         switch (count)
         {
             case 5:
-                Question.text = $"ï¿½Ò°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ó¸ï¿½ï¿½ï¿½ ï¿½Ùµï¿½ï¿½ï¿½ï¿½ï¿½~";
-                LeftText.text = $"ï¿½Ê³ï¿½ ï¿½Ùµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
-                RightText.text = $"ï¿½ï¿½ï¿½Ú´ï¿½ ï¿½Ó¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+                Question.text = $"¼Ò°³ÆÃ Àü¿¡ ¸Ó¸®´Â ´Ùµë¾î¾ßÁö~";
+                LeftText.text = $"³Ê³ª ´ÙµëÀ¸¼¼¿ä";
+                RightText.text = $"³²ÀÚ´Â ¸Ó¸®»¡ÀÌÁö";
 
 
                 break;
             case 4:
-                Question.text = $"ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ó¸ï¿½ï¿½ï¿½ Ç³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½~ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½?";
-                LeftText.text = $"ï¿½ß¸ï¿½ï¿½ï¿½";
-                RightText.text = $"ï¿½Ì¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ø¾ï¿½";
+                Question.text = $"¿À Àú¹øº¸´Ù ¸Ó¸®°¡ Ç³¼ºÇØÁ³³×~ ºñ°áÀÌ ¹¹¾ß?";
+                LeftText.text = $"¹ß¸ðÁ¦";
+                RightText.text = $"¹Ì¿ë»ç ´ÔÀÇ ¼Ø¾¾";
 
 
                 break;
             case 3:
-                Question.text = $"ï¿½ï¿½ï¿½~ ï¿½Ù¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½? ï¿½Î½ï¿½ï¿½Ï´Â°ï¿½ ï¿½î¶§?";
-                LeftText.text = $"ï¿½ï¿½";
-                RightText.text = $"ï¿½Æ´Ï¿ï¿½";
+                Question.text = $"¾î¸Ó~ ´Ù¸®ÅÐÀº ¿Ö ÀÌ·¸°Ô ¸¹¾Æ? ¿Î½ÌÇÏ´Â°Å ¾î¶§?";
+                LeftText.text = $"³×";
+                RightText.text = $"¾Æ´Ï¿ä";
 
 
                 break;
             case 2:
-                Question.text = $"ï¿½î¶»ï¿½ï¿½ ï¿½Ùµï¿½ï¿½ï¿½Ù±ï¿½?";
-                LeftText.text = $"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
-                RightText.text = $"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+                Question.text = $"¾î¶»°Ô ´Ùµë¾îÁÙ±î?";
+                LeftText.text = $"ÀÏÃâÄÆ";
+                RightText.text = $"»þ±â";
 
                 condition = false;
                 StageManager.Instance.player_information.object_id_arr[ID] = true;
                 StageManager.Instance.player_information.HairCount++;
-                StartCoroutine(Stage3Linker.Instance.ELogging("ï¿½Ù¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½ï¿½ ï¿½Ó¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½!"));
+                StartCoroutine(Stage3Linker.Instance.ELogging("´Ù¸®ÅÐÀ» ¿Î½ÌÇØ ¸Ó¸®ÅÐÀ» ¾ò¾ú´Ù!"));
                 break;
         }
 

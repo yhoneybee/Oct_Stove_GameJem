@@ -21,6 +21,7 @@ public class Keypad : MonoBehaviour
     {
         if(delay == false)
         {
+            if(InputWord.Length<3)
             StartCoroutine(Coloring(num));
             InputWord += Convert.ToString(num);
         }
@@ -35,6 +36,7 @@ public class Keypad : MonoBehaviour
     void quit()
     {
         microwave.setactive = false;
+        InputWord = "";
     }
     void correct()
     {
@@ -51,9 +53,12 @@ public class Keypad : MonoBehaviour
             if (PassWord == InputWord)
                 correct();
             else
+            {
+                delay = false;
                 quit();
+            }
             yield return new WaitForSeconds(0.3f);
-            InputWord = null;
+            InputWord = "";
             //value.text = Convert.ToString(InputWord);
         }
         yield return new WaitForSeconds(0.3f);

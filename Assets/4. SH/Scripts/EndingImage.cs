@@ -8,7 +8,7 @@ public class EndingImage : MonoBehaviour
     public List<GameObject> bald_img;
     public List<GameObject> normal_img;
 
-    private static int list_index = -1;
+    private static int list_index = 2;
     public static int ListIndex
     {
         get { return list_index; }

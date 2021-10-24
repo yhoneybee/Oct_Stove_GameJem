@@ -47,6 +47,7 @@ public class Stage3Linker : MonoBehaviour
     public Button Right;
 
     public GameObject PuzzleGame;
+    public TextMeshProUGUI LogText;
 
     public ZoomedObjs ZoomedObjs;
     public Buttons Buttons;
@@ -111,7 +112,7 @@ public class Stage3Linker : MonoBehaviour
         // 큰 뉴스
         Buttons.BiggerNews.onClick.AddListener(() =>
         {
-            if (StageManager.Instance.player_information.object_id_arr[6]) // YHTODO : 여기에서 사진을 가지고 있는지 확인
+            if (StageManager.Instance.player_information.object_id_arr[5]) // YHTODO : 여기에서 사진을 가지고 있는지 확인
             {
                 ZoomedObjs.Biggest.gameObject.SetActive(true);
             }
@@ -128,6 +129,16 @@ public class Stage3Linker : MonoBehaviour
             if (CMovingUI != null) StopCoroutine(CMovingUI);
             CMovingUI = StartCoroutine(UIManager.Instance.EMovingUI(Bg, Vector2.left * 960, 5, true));
         });
+    }
+
+    public IEnumerator ELogging(string str)
+    {
+        LogText.text = str;
+        yield return StartCoroutine(UIManager.Instance.EColoringUI(LogText, Color.black, 3));
+        yield return new WaitForSeconds(1);
+        yield return StartCoroutine(UIManager.Instance.EColoringUI(LogText, Color.clear, 3));
+        LogText.text = "";
+        yield return null;
     }
 
     private void ShowZoomedObj(GameObject obj)

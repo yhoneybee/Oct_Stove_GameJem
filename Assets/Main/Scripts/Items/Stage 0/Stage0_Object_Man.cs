@@ -6,6 +6,9 @@ public class Stage0_Object_Man : InteractiveObject
 {
     [SerializeField] UnityEngine.UI.Image barikang;
 
+    [SerializeField] GameObject help_message;
+    [SerializeField] GameObject fade;
+
     protected override void Start()
     {
         base.Start();
@@ -31,5 +34,16 @@ public class Stage0_Object_Man : InteractiveObject
     {
         barikang.gameObject.SetActive(false);
         StageManager.Instance.player_information.HairCount++;
+
+        help_message.SetActive(true);
+        fade.SetActive(true);
+
+        Invoke("WindowOff", 2);
+    }
+
+    void WindowOff()
+    {
+        help_message.SetActive(false);
+        fade.SetActive(false);
     }
 }

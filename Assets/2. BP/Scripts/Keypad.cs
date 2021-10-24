@@ -12,8 +12,10 @@ public class Keypad : MonoBehaviour
     [SerializeField] string InputWord;
     [SerializeField] List<Image> btn;
     [SerializeField] Stage2_Object_microwave microwave;
+    [SerializeField] Image microwaveopen;
     public TextMeshProUGUI value;
     private bool delay;
+    public bool already = false;
 
     public void Input(int num)
     {
@@ -26,9 +28,9 @@ public class Keypad : MonoBehaviour
     }
     IEnumerator Coloring(int num)
     {
-        UIManager.Instance.StartCoroutine(UIManager.Instance.EColoringUI(btn[num], new Color(0, 0, 0, 0.3f), 20));
+        UIManager.Instance.StartCoroutine(UIManager.Instance.EColoringUI(btn[num-1], new Color(0, 0, 0, 0.3f), 20));
         yield return new WaitForSeconds(0.3f);
-        UIManager.Instance.StartCoroutine(UIManager.Instance.EColoringUI(btn[num], new Color(0, 0, 0, 0), 30));
+        UIManager.Instance.StartCoroutine(UIManager.Instance.EColoringUI(btn[num-1], new Color(0, 0, 0, 0), 30));
     }
     void quit()
     {
@@ -36,8 +38,9 @@ public class Keypad : MonoBehaviour
     }
     void correct()
     {
-        //맞았을때 이벤트
-        Debug.Log("correct");
+        microwaveopen.gameObject.SetActive(true);
+        microwave.setactive = false;
+        already = true;
     }
     IEnumerator check()
     {

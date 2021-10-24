@@ -35,6 +35,7 @@ public class Keypad : MonoBehaviour
     void quit()
     {
         microwave.setactive = false;
+        InputWord = null;
     }
     void correct()
     {

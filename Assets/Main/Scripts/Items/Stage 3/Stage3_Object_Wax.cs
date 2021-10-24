@@ -24,11 +24,39 @@ public class Stage3_Object_Wax : InteractiveObject
         base.Start();
         Left.onClick.AddListener(() =>
         {
+            switch (count)
+            {
+                case 5:
+                    // WRONG
+                    break;
+                case 4:
+                    // WRONG
+                    break;
+                case 3:
+                    break;
+                case 2:
+                    // NONE
+                    break;
+            }
+
             StopAllCoroutines();
             StartCoroutine(EClose());
         });
         Right.onClick.AddListener(() =>
         {
+            switch (count)
+            {
+                case 5:
+                    break;
+                case 4:
+                    break;
+                case 3:
+                    //WRONG
+                    break;
+                case 2:
+                    break;
+            }
+
             StopAllCoroutines();
             StartCoroutine(EClose());
         });

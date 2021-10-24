@@ -27,6 +27,7 @@ public struct ZoomedObjs
     public RectTransform PuzzleDrawer;
     public Image PuzzleSuccessImg;
     public Sprite PuzzleSuccess;
+    public Sprite PuzzleSuccessAndGotten;
 
     [Header("- LightDrawer UI -")]
     public RectTransform LightDrawer;
@@ -68,7 +69,8 @@ public class Stage3Linker : MonoBehaviour
             {
                 ActiveObj.SetActive(false);
                 ZoomParent(false);
-                ZoomedObjs.Biggest.gameObject.SetActive(false);
+                if (ZoomedObjs.Biggest.gameObject)
+                    ZoomedObjs.Biggest.gameObject.SetActive(false);
             }
         });
 

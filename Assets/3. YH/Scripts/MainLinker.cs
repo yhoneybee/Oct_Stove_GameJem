@@ -66,6 +66,8 @@ public class MainLinker : MonoBehaviour
 
         for (int i = 0; i < player_data.object_id_arr.Length; i++)
             player_data.object_id_arr[i] = false;
+
+        player_data.timer = 600;
     }
 
     public void QuitGame() => Application.Quit();

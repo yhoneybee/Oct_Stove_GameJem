@@ -11,6 +11,8 @@ public class MainLinker : MonoBehaviour
     public Image After;
     public Button Button;
 
+    public TextMeshProUGUI Title;
+
     Coroutine CMovingUI;
     Coroutine CColoringUI_0;
     Coroutine CColoringUI_1;
@@ -25,6 +27,12 @@ public class MainLinker : MonoBehaviour
     {
         ui_move_up = false;
         appear_btn = false;
+
+        foreach (var item in Buttons)
+        {
+            item.enabled = false;
+            item.GetComponent<TitleButtons>().enabled = false;
+        }
 
         Button.onClick.AddListener(() =>
         {
@@ -44,6 +52,12 @@ public class MainLinker : MonoBehaviour
                 if (CColoringUI_2 != null) StopCoroutine(CColoringUI_0);
                 CColoringUI_2 = StartCoroutine(UIManager.Instance.EColoringUI(Buttons[2].targetGraphic, Color.white, 3));
 
+                foreach (var item in Buttons)
+                {
+                    item.enabled = true;
+                    item.GetComponent<TitleButtons>().enabled = true;
+                }
+
                 Button.enabled = false;
             }
         });
@@ -53,4 +67,6 @@ public class MainLinker : MonoBehaviour
         for (int i = 0; i < player_data.object_id_arr.Length; i++)
             player_data.object_id_arr[i] = false;
     }
+
+    public void QuitGame() => Application.Quit();
 }

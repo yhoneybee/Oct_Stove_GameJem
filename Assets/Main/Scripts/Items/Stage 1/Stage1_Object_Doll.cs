@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Stage1_Object_Doll : InteractiveObject
 {
-    [SerializeField] GameObject[] hairs = new GameObject[2];
+    [SerializeField] GameObject doll_window;
+
+    [SerializeField] GameObject hair;
     protected override void Start()
     {
         base.Start();
@@ -13,14 +15,23 @@ public class Stage1_Object_Doll : InteractiveObject
     }
     protected override void Action()
     {
-        if(condition)
+        if (condition)
         {
-            StageManager.Instance.player_information.HairCount++;
-
-            hairs[0].SetActive(false);
-            hairs[1].SetActive(false);
+            StartCoroutine(ShowImage());
 
             condition = false;
         }
+    }
+
+    IEnumerator ShowImage()
+    {
+        doll_window.SetActive(true);
+        yield return new WaitForSeconds(1f);
+
+        StageManager.Instance.player_information.HairCount++;
+        hair.SetActive(false);
+
+        yield return new WaitForSeconds(1f);
+        doll_window.SetActive(false);
     }
 }

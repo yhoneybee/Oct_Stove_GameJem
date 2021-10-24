@@ -37,7 +37,8 @@ public class Stage3_Object_Wax : InteractiveObject
                 case 3:
                     break;
                 case 2:
-                    // NONE
+
+                    EndingImage.ListIndex = 0;
                     break;
             }
 
@@ -57,6 +58,8 @@ public class Stage3_Object_Wax : InteractiveObject
                     StageManager.Instance.timer -= 30;
                     break;
                 case 2:
+                    EndingImage.ListIndex = 1;
+                    
                     break;
             }
 
@@ -105,7 +108,7 @@ public class Stage3_Object_Wax : InteractiveObject
             case 2:
                 Question.text = $"¾î¶»°Ô ´Ùµë¾îÁÙ±î?";
                 LeftText.text = $"ÀÏÃâÄÆ";
-                RightText.text = $"¼ö¿°ÄÆ";
+                RightText.text = $"»þ±â";
 
                 condition = false;
                 StageManager.Instance.player_information.object_id_arr[ID] = true;

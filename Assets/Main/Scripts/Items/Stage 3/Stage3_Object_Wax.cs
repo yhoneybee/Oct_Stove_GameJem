@@ -28,9 +28,11 @@ public class Stage3_Object_Wax : InteractiveObject
             {
                 case 5:
                     // WRONG
+                    StageManager.Instance.timer -= 30;
                     break;
                 case 4:
                     // WRONG
+                    StageManager.Instance.timer -= 30;
                     break;
                 case 3:
                     break;
@@ -52,6 +54,7 @@ public class Stage3_Object_Wax : InteractiveObject
                     break;
                 case 3:
                     //WRONG
+                    StageManager.Instance.timer -= 30;
                     break;
                 case 2:
                     break;

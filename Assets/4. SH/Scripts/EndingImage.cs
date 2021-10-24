@@ -8,10 +8,23 @@ public class EndingImage : MonoBehaviour
     public List<GameObject> bald_img;
     public List<GameObject> normal_img;
 
+    public static int ListIndex = 0;
+
+    public List<GameObject> GetImgList(int index)
+    {
+        return index switch
+        {
+            0 => happy_img,
+            1 => bald_img,
+            2 => normal_img,
+            _ => null,
+        };
+    }
+
     void Start()
     {
         ResetImage();
-        ImageRender(normal_img);
+        ImageRender(GetImgList(ListIndex));
     }
 
     void ResetImage()

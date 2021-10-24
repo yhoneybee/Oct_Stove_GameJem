@@ -1155,7 +1155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  ID: 3
+  ID: 4
 --- !u!114 &395683594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2565,7 +2565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  ID: 5
+  ID: 6
 --- !u!1 &707274915
 GameObject:
   m_ObjectHideFlags: 0
@@ -3883,7 +3883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  ID: 4
+  ID: 5
   Talk: {fileID: 1095468264}
   Question: {fileID: 885165063}
   HairDresser: {fileID: 465756420}

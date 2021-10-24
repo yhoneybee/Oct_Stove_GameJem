@@ -111,7 +111,7 @@ public class Stage3Linker : MonoBehaviour
         // 큰 뉴스
         Buttons.BiggerNews.onClick.AddListener(() =>
         {
-            if (true) // YHTODO : 여기에서 사진을 가지고 있는지 확인
+            if (StageManager.Instance.player_information.object_id_arr[6]) // YHTODO : 여기에서 사진을 가지고 있는지 확인
             {
                 ZoomedObjs.Biggest.gameObject.SetActive(true);
             }

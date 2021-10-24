@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 486b9376022f1bc42bc14675caf831e4, type: 3}
   m_Name: Player Save Data
   m_EditorClassIdentifier: 
-  object_id_arr: 000000000000
-  hair_count: 5
-  timer: 519
+  object_id_arr: 000000010000
+  hair_count: 0
+  timer: 8

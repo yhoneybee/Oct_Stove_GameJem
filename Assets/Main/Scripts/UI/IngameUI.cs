@@ -71,7 +71,7 @@ public class IngameUI : MonoBehaviour
     {
         while (Vector2.Distance(side_ui.position, is_side_ui_appeard ? target_transform.position : current_transform.position) > 0.1f)
         {
-            side_ui.position = Vector2.Lerp(side_ui.position, is_side_ui_appeard ? target_transform.position : current_transform.position, 0.5f);
+            side_ui.position = Vector3.Lerp(side_ui.position, is_side_ui_appeard ? target_transform.position : current_transform.position, 0.5f);
             yield return new WaitForSeconds(0.01f);
         }
         is_side_ui_appeard = !is_side_ui_appeard;
